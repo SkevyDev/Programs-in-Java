@@ -56,6 +56,14 @@ public class GuiView extends JFrame {
 		add(lblCapa);
 		add(txtCapa);
 		add(btnDownloadCapa);
+		btnDownloadCapa.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				manager.download(txtCapa.getText(), TypeDownload.CAPA);
+				System.out.println("Concluido");
+			}
+		});
 		add(progress);
 		setVisible(true);
 	}
